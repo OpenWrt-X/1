@@ -9,8 +9,7 @@ EXTRA_HELP="        status Print the status of the service"
 config_load()
 {
 	wifidog_enable=$(uci get wifidog.@wifidog[0].wifidog_enable)
-	[ "$wifidog_enable" -eq 0 ] && stop && exit 0
-				/usr/bin/wifidog-init stop
+	[ "$wifidog_enable" -eq 0 ] && /usr/bin/wifidog-init stop && stop && exit 0
 				sleep 1
 
         rm -f /etc/wifidog.conf
