@@ -124,7 +124,7 @@ end
 --增加下面几行
  local apply = luci.http.formvalue("cbi.apply")
 if apply then
-        io.popen("/etc/init.d/config restart")
+        io.popen("/etc/init.d/wifidog restart")
 end
 
 return m
